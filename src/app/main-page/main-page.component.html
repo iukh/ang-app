@@ -1,0 +1,65 @@
+<div class="welcome-screen__wrapper">
+  <header class="welcome-screen__header">
+    <div class="logo header__logo">
+      Добро пожаловать в наш Блог
+    </div>
+    <div class="nav header__nav">
+      <li class="nav__item"><a >Sections</a></li>
+      <li class="nav__item"><a>logout</a></li>
+      </div>
+  </header>
+    <div class="welcome-screen__content">
+    </div>
+  </div>
+  <div class="container">
+    <div class="">
+    </div>
+    <div class="container__howto" id="sections">
+      <div class="">
+        <button type="button" >View  all Articles</button>
+        <button type="button" routerLink = "/article">Add new Article</button>
+      </div>
+  <app-sections></app-sections>
+  <router-outlet name='second'></router-outlet>
+    </div>
+
+  </div>
+
+  <div class="subscriber">
+    <div class="subscriber__text">
+      <span>Если вы хотите первыми узнавать о скидках, новых сортах и новостях, подпишитесь</span>
+    </div>
+    <form class="subscriber__form" action="index.html" method="post">
+      <input type="email" class="subscriber__form_email" name="" value="" placeholder="E-mail">
+      <input type="submit" class="subscriber__form_button"name="" value="подписаться">
+      <p> <input type="checkbox" checked> Я согласен с <a>правилами пользования сервисом</a></p>
+    </form>
+  </div>
+  <footer class="footer">
+    <div class="">
+    </div>
+    <div class="footer__first-column">
+      <p>Помощь</p>
+      <p><a href="#">Вопрос-ответ</a></p>
+      <p><a href="#">Доставка и оплата</a></p>
+    </div>
+    <div class="footer__second-column">
+      <p>Компания</p>
+      <p><a href="#">О компании</a></p>
+      <p><a href="#">Сертификаты</a></p>
+    </div>
+    <div class="footer__third-column">
+      <p>Каталог</p>
+      <p><a href="#">Чай</a></p>
+      <p><a href="#">Кофе</a></p>
+    </div>
+    <div class="footer__last-column">
+      <span>Звоните нам бесплатно:</span>
+      <div class="footer__phoneNumber">
+        8-800-333-49-80
+      </div>
+      <p> © 2008-2018 Tasty Coffee</p>
+    </div>
+    <div class="">
+    </div>
+  </footer>

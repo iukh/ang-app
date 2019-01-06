@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<div class="container">
+    <div class="">
+      <h1>Follow your interests</h1>
+    </div>
+    <div class="form">
+      <ul class="tab-group">
+        <li class="tab active">
+          <a href="#registration">Sign Up</a>
+        </li>
+        <li class="tab">
+          <a href="#login">Log In</a>
+        </li>
+      </ul>
+      <div class="tab-content">
+        <app-login></app-login>
+        <app-registration></app-registration>
+
+        <div id="login">
+          <h1>Welcome Back!</h1>
+          <form class="" action="/login" method="post">
+            <input type="email" required autocomplete="off" placeholder="Email Address" name="login_email">
+            <input type="password" required autocomplete="off" placeholder="Enter password" name="login_password">
+            <button type="submit" class="button button-block" name="button">Log in</button>
+          </form>
+        </div>
+      </div>
+    </div>
+</div>
