@@ -2,9 +2,9 @@
   <div class="slide-item__photo" style="background: url(../assets/images/abonem.jpg)">
     <div class="abonement-container">
       <h2 class="item-title title">{{section.sectionName}}</h2>
-      <div class="item-desc">Number of articles:</div>
+      <div class="item-desc">Number of puzzles:</div>
       <div class="item-price">{{section.articles.length}}</div>
-      <button type="button" [routerLink]= " [ '/main' ,{outlets: {second: 'sections'}}]" [queryParams]="{'sectionId': section._id}" class="item-button" id="article">View Articles</button>
+      <button type="button" [routerLink]= " [ '/main' ,{outlets: {second: 'articles'}}]" [queryParams]="{'sectionId': section._id}" class="item-button" id="article">View Puzzles</button>
       <div class="item-more">
   <!-- <a href="#" class="item-about">Created: ${new Date{{{section.dateCreated}}).toLocaleDateString()}</a> -->
       </div>
