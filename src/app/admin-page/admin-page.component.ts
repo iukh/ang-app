@@ -8,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class AdminPageComponent implements OnInit {
 
   constructor() { }
-
   ngOnInit() {
   }
+  currentTab: number = 0;
 
+  setCurrentTabValue(tabName: number) {
+    this.currentTab = tabName;
+  }
 }

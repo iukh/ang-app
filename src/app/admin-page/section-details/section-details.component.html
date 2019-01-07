@@ -1,0 +1,33 @@
+<div class="title">
+  Planned sections:
+</div>
+<div class="plannedSections" *ngIf="flag">
+  <div class="center plannedSections" *ngIf="plannedSections.length==0">There are no requests for creating sections</div>
+  <div class="userCard" *ngFor="let plannedSection of plannedSections">
+    <div class="">
+      {{plannedSection.sectionName}}  (Owner: {{plannedSection.sectionOwner}})
+    </div>
+    <div class="">
+      Created:  {{plannedSection.dateCreated | date:"dd/MM/yyyy"}}
+    </div>
+    <button type="button" name="button" class="activate" (click)="activateSection(plannedSection)">Activate</button>
+    <button type="button" name="button" class="details">Details</button>
+    <button type="button" name="button" class="remove removeSection" (click)="deleteSection(plannedSection)" >Delete</button>
+  </div>
+</div>
+<div class="title">
+  Active sections:
+</div>
+<div class="activeSections" *ngIf="flag">
+  <div class="userCard" *ngFor="let activeSection of activeSections">
+    <div class="">
+      {{activeSection.sectionName}}  (Owner: {{activeSection.sectionOwner}})
+    </div>
+    <div class="">
+      Created:  {{activeSection.dateCreated | date:"dd/MM/yyyy"}}
+    </div>
+    <button type="button" name="button" class="blocked" (click)="blockSection(activeSection)">Block</button>
+    <button type="button" name="button" class="details">Details</button>
+    <button type="button" name="button" class="remove removeSection" (click)="deleteSection(activeSection)">Delete</button>
+  </div>
+</div>

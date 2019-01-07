@@ -4,6 +4,7 @@ export class User {
     public email: string,
     public password: string,
     public _id: string,
-    public dateCreated: Date
+    public dateCreated: Date,
+    public isAdmin: boolean
   ) {}
 }

@@ -1,0 +1,11 @@
+<button type="button" name="button" class="addUser">Create New Customer</button>
+<div class="userCard" *ngFor="let user of users">
+  <div class="">
+    {{user.name}}  ({{user.email}})
+  </div>
+  <div class="">
+    Registered: {{user.dateCreated | date:"dd/MM/yyyy"}}
+  </div>
+  <button type="button" name="button" class="blocked">Block</button>
+  <button type="button" name="button" class="remove removeUser" (click)="deleteUser(user)">Delete</button>
+</div>

@@ -25,4 +25,13 @@ export class UserService {
     console.log(userData);
     return this.http.post<User>(`http://localhost:3000/login`, userData);
   }
+  getUsers() {
+    return this.http.get<Array<User>>(`http://localhost:3000/api/customerManagement/customers`);
+  }
+
+  deleteUser (user: User): Observable<User> {
+    const id =  user._id;
+    const url = `http://localhost:3000/api/customerManagement/customer/${id}`;
+    return this.http.delete<User>(url);
+  }
 }

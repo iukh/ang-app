@@ -20,6 +20,9 @@ import { SectionService } from './section.service';
 import { ArticleComponent } from './main-page/article/article.component';
 import { ArticleService } from './article.service';
 import { ArticleFormComponent } from './main-page/article-form/article-form.component';
+import { UserDetailsComponent } from './admin-page/user-details/user-details.component';
+import { ArticleDetailsComponent } from './admin-page/article-details/article-details.component';
+import { SectionDetailsComponent } from './admin-page/section-details/section-details.component';
 
 
 @NgModule({
@@ -33,6 +36,9 @@ import { ArticleFormComponent } from './main-page/article-form/article-form.comp
     SectionsComponent,
     ArticleComponent,
     ArticleFormComponent,
+    UserDetailsComponent,
+    ArticleDetailsComponent,
+    SectionDetailsComponent,
   ],
   imports: [
     BrowserModule,

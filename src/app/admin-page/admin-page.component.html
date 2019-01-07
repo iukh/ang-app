@@ -1,23 +1,22 @@
 <div class="admin_container">
   <div class="background">
-        <div class="">
-          <div class="">
-            <a href='/logout'>logout</a>
-            <a href='/info'>Main content</a>
-          </div>
-          <div class="menu">
-            <button type="button" name="button" id="users">Users</button>
-            <button type="button" name="button" id="articles">Articles</button>
-            <button type="button" name="button" id="requests">Requests</button>
-          </div>
-          <div class="actions">
-          </div>
-          <div class="container">
-              <div class="title">
-                Welcome to the admin page
-              </div>
-          </div>
-        </div>
+    <div class="">
+      <div class="title">
+        Welcome to the admin page
       </div>
-
+      <div class="menu">
+        <button type="button" name="button" id="users" (click)="setCurrentTabValue(0)">Users</button>
+        <button type="button" name="button" id="articles" (click)="setCurrentTabValue(1)">Articles</button>
+        <button type="button" name="button" id="requests" (click)="setCurrentTabValue(2)">Requests</button>
+        <button type="button" name="button" routerLink='/main'>Main Content</button>
+      </div>
+      <div class="actions">
+      </div>
+      <div class="container">
+        <app-user-details *ngIf="currentTab==0"></app-user-details>
+        <app-section-details *ngIf="currentTab==2"></app-section-details>
+        <app-article-details *ngIf="currentTab==1"></app-article-details>
+      </div>
+    </div>
+  </div>
 </div>
