@@ -1,28 +1,13 @@
-<!-- <div class="article">
-  <form class="articleCreate">
-    <label> Select existing category or create new one:<br>
-    <select class="" id="selectSection" onchange="newSectionCheck(this)" name="section">
-    </select>
-      </label><br>
-      <div id="newSection">
-    <div class="warning">Note: A new section will be added only after checking by the admin.</div>
-    <label class="">Enter section name: <input type="text" value="" class="input_block title" id="newSectionName" name="section"></label>
-    </div>
-    <label>Enter title: <input type="text" name="title" value="" class="input_block title"></label>
-    <label>Enter sitiation:<textarea type="text" name="text" class="input_block"></textarea></label>
-    <label>Enter solution:<textarea type="text" name="answer" class="input_block"></textarea></label>
-    <label>Visibility settings:<br><input type="radio" checked name="dva"/>Visible to all</label>
-    <label><input type="radio" name="dva"/>Visible only to me</label><br>
-    <button id="addNewArticle" type="button" name="button" class="submit-form"><a href="#order-success"></a> Create article</button>
-  </form>
-</div> -->
-
 <form [formGroup]="articleForm" (submit)="onSubmit()" class="articleCreate">
   <label for="selectSection"> Select existing category or create new one:</label>
-  <select class="" id="selectSection" formControlName="sectionName" [(ngModel)]="selectedWorkout" >
-      <option *ngFor="let item of sections" [ngValue]="item" id="{{item._id}}" value={{item.sectionName}} selected>{{item.sectionName}}<option>
+  <select class="" id="selectSection" formControlName="sectionName" [(ngModel)]="selectedWorkout" (change)="onChange($event.target.value)">
+      <option *ngFor="let item of sections" [ngValue]="item" id="{{item._id}}" value={{item.sectionName}}>{{item.sectionName}}<option>
   </select>
 
+  <div id="newSection" *ngIf = "!isSectionExisting">
+      <div class="warning">Note: A new section will be added only after checking by the admin.</div>
+      <label class="">Enter section name: <input type="text" class="input_block title" [(ngModel)]="newSectionName" [ngModelOptions]="{standalone: true}"></label>
+  </div>
   <label for="title">Enter title: </label>
   <input type="text" id="title" formControlName="title">
 
@@ -31,7 +16,7 @@
 
   <label for="answer">Enter solution:</label>
   <textarea type="text" id="answer" formControlName="answer"></textarea>
-	<button type="submit">Create article</button>
+	<button type="submit" class="button">Create Pazzle</button>
 </form>
 
 <hr/><br/>
