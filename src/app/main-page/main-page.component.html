@@ -1,10 +1,10 @@
 <div class="welcome-screen__wrapper">
   <header class="welcome-screen__header">
     <div class="logo header__logo">
-      Добро пожаловать в наш Блог
+      "Situation puzzle" List
     </div>
     <div class="nav header__nav">
-      <li class="nav__item"><a >Sections</a></li>
+      <li class="nav__item" routerLink='/main'><a >Sections</a></li>
       <li class="nav__item" routerLink='/auth'><a>logout</a></li>
       </div>
   </header>
@@ -16,10 +16,14 @@
     </div>
     <div class="container__howto" id="sections">
       <div class="">
-        <button type="button" >View  all Articles</button>
-        <button type="button" [routerLink]= " [ '/main' ,{outlets: {second: 'article'}}]">Add new Article</button>
+        <button type="button" >View  all Pazzles</button> <br>
+        <button type="button" [routerLink]= " [ '/main' ,{outlets: {second: 'article'}}]" class="addButton firstPart">+</button>
+        <button type="button" [routerLink]= " [ '/main' ,{outlets: {second: 'article'}}]" class="addButton secondPart">Add new Pazzle</button>
 
       </div>
+      <app-sections *ngIf="isSectionSelected"></app-sections>
+      <!-- <app-article *ngIf="!isSectionSelected"></app-article> -->
+  <router-outlet name='second'></router-outlet>
   <router-outlet name='second'></router-outlet>
     </div>
 
