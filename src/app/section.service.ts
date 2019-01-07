@@ -1,9 +1,11 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { Section } from './section';
 
-const api = '/api/articleManagement';
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' })
+};
 
 @Injectable()
 export class SectionService {
@@ -30,6 +32,11 @@ export class SectionService {
     const url = `http://localhost:3000/api/sectionManagement/section/${id}/block`;
     return this.http.put<Section>(url, true);
   }
+  createSection(section: Section): Observable<Section> {
+      console.log(section);
+    const url = `http://localhost:3000/api/sectionManagement/section`;
+    return this.http.post<Section>(url, section, httpOptions);
+    }
   getListOfSections() {
 
   }
