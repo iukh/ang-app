@@ -35,8 +35,6 @@ private router: Router) { }
     console.log(user)
     return this.userService.addUser(user).subscribe(user => {
       this.user = user;
-      console.log("response: ")
-      console.log(this.user);
       this.router.navigate(['/main']);
     });
  }

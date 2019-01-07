@@ -11,6 +11,7 @@ const passport = require('passport');
 var session = require('express-session');
 const bodyParser = require("body-parser");
 const urlencodedParser = bodyParser.urlencoded({extended: false});
+const jsonParser  = bodyParser.json();
 var debug = require('debug')('mean-angular6:server');
 
 var cors = require('cors')
@@ -52,27 +53,24 @@ app.get('/logout', function(req, res){
   res.redirect('/main');
 });
 
-passport.use(new LocalStrategy({
-  usernameField: 'login_email',
-  passwordField: 'login_password'
-},
+passport.use(new LocalStrategy(
 function(username, password, done) {
-  console.log('starting search');
   var currentUser = User.findOne({ email: username}, function(err, user) {
-    if (err) { return done(err); console.log('ERROR'); }
+    if (err) {
+      return done(err);
+      console.log('ERROR');
+    }
     if (!user) {
-      console.log('User Not Found with username '+ username);
       return done(null, false, { message: 'Incorrect username.' });
     }
     if (!user.validPassword(password)) {
-      console.log('Not valid password'+ password);
       return done(null, false, { message: 'Incorrect password.' });
     }
     return done(null, user);
   });
 }
 ));
-//ля того, чтобы сохранять или доставать пользовательские данные из сессии, паспорт использует функции `passport.serializeUser()` и `passport.deserializeUser()`.
+
 passport.serializeUser(function(user, done) {
   done(null, user.id);
 });
@@ -82,18 +80,10 @@ passport.deserializeUser(function(id, done) {
     done(err, user);
   });
 });
-app.post('/login', urlencodedParser, passport.authenticate('local'), function(req, res){
-  if (req.user.isAdmin) {
-    res.redirect('/admin');
-  } else
-  res.redirect('/info');
+app.post('/login', jsonParser, passport.authenticate('local'), function(req, res){
+  console.log(req.user);
+  res.send(req.user);
 });
-app.get('/info',function(req, res){
-  res.sendFile(__dirname + '/client/main.html');
-} );
-app.get('/admin',function(req, res){
-  res.sendFile(__dirname + '/client/admin.html');
-} );
 
 
 app.listen(port,() => {

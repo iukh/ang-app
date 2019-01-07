@@ -9,15 +9,11 @@ export class AuthPageComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-
-    console.log(this.LoginWasClicked);
-  }
+  ngOnInit() {}
 
   LoginWasClicked: boolean = false;
 
   setLoginButtonClicked(clicked: boolean) {
-    console.log("eeeee");
       this.LoginWasClicked = clicked;
       console.log(this.LoginWasClicked);
   }

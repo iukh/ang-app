@@ -1,12 +1,3 @@
-a {
-  text-decoration: none;
-  color: #191919;
-  transition: .5s ease;
-}
-a:hover {
-  color: #faa76c;
-}
-
 .form {
   background: rgba(242, 243, 245, 0.5);
   padding: 40px;
@@ -15,51 +6,12 @@ a:hover {
   border-radius: 4px;
   box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
 }
-
-.tab-group {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 40px 0;
-}
-.tab-group:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-.tab-group li a {
-  display: block;
-  text-decoration: none;
-  padding: 10px;
-  background: rgba(160, 179, 176, 0.25);
-  color: #191919;
-  font-size: 20px;
-  float: left;
-  width: 50%;
-  text-align: center;
-  cursor: pointer;
-  transition: .5s ease;
-  border: 1px solid #4c4343;
-}
-.tab-group li a:hover {
-  background: #b76d00;
-  color: #ffffff;
-}
-.tab-group .active a {
-  background: #191919;
-  color: #ffffff;
-}
-
-.tab-content > div:last-child {
-  display: none;
-}
-
 h1 {
   text-align: center;
   color: black;
   font-weight: 300;
   margin: 0 0 40px;
 }
-
 input, textarea {
   font-size: 22px;
   display: block;
@@ -78,18 +30,11 @@ input:focus, textarea:focus {
   outline: 0;
   border-color: #b76d00;
 }
-
 textarea {
   border: 2px solid #a0b3b0;
   resize: vertical;
 }
-
-.field-wrap {
-  position: relative;
-  margin-bottom: 40px;
-}
-
-.button {
+button {
   border: 0;
   outline: none;
   border-radius: 0;
@@ -101,16 +46,10 @@ textarea {
   background: #191919;
   color: #ffffff;
 }
-.button:hover, .button:focus {
+button:hover, button:focus {
   background: #b76d00;
 }
-
 .button-block {
   display: block;
   width: 100%;
-}
-
-.forgot {
-  margin-top: -20px;
-  text-align: right;
 }
