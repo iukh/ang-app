@@ -17,9 +17,9 @@
     <div class="container__howto" id="sections">
       <div class="">
         <button type="button" >View  all Articles</button>
-        <button type="button" routerLink = "/article">Add new Article</button>
+        <button type="button" [routerLink]= " [ '/main' ,{outlets: {second: 'article'}}]">Add new Article</button>
+
       </div>
-  <app-sections></app-sections>
   <router-outlet name='second'></router-outlet>
     </div>
 

@@ -3,6 +3,12 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import {FormsModule} from '@angular/forms';
+import { UserService } from './user.service';
+
+
+import { AuthPageComponent } from './auth-page/auth-page.component';
+import { AdminPageComponent } from './admin-page/admin-page.component';
+import { MainPageComponent } from './main-page/main-page.component';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -15,21 +21,18 @@ import { ArticleComponent } from './main-page/article/article.component';
 import { ArticleService } from './article.service';
 import { ArticleFormComponent } from './main-page/article-form/article-form.component';
 
-import { AuthPageComponent } from './auth-page/auth-page.component';
-import { AdminPageComponent } from './admin-page/admin-page.component';
-import { MainPageComponent } from './main-page/main-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    AuthPageComponent,
+    AdminPageComponent,
+    MainPageComponent,
     RegistrationComponent,
     LoginComponent,
     SectionsComponent,
     ArticleComponent,
     ArticleFormComponent,
-    AuthPageComponent,
-    AdminPageComponent,
-    MainPageComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +41,7 @@ import { MainPageComponent } from './main-page/main-page.component';
     ReactiveFormsModule,
     FormsModule
   ],
-  providers: [SectionService, ArticleService],
+  providers: [SectionService, ArticleService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

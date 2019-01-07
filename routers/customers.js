@@ -15,14 +15,16 @@ router.get("/customer/:id", async function(req, res){
   res.status(200).json(customer);
 });
 
-router.post("/customer", urlencodedParser, function(req, res){
-  const customerData = {
-    name: req.body.name,
-    email: req.body.email,
-    password: req.body.password
-  };
-  const newCustomer = new Customer(customerData);
-  res.sendFile(process.cwd() + '/client/main.html');
+router.post("/customer", jsonParser, function(req, res){
+  console.log(req.body);
+  // const customerData = {
+  //   name: req.body.name,
+  //   email: req.body.email,
+  //   password: req.body.password
+  // };
+  const newCustomer = new Customer(req.body);
+  //res.sendFile(process.cwd() + '/client/main.html');
+  res.status(200).json(newCustomer);
   newCustomer.save();
 });
 

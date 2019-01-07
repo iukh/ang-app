@@ -1,9 +1,9 @@
 <div id="registration">
   <h1>Sign Up for Free</h1>
-  <form class="" action="/api/customerManagement/customer" method="post">
-    <input type="text"required autocomplete="off" placeholder="Enter your name" name="name">
-    <input type="email"required autocomplete="off" placeholder="Email Address" name="email">
-    <input type="password" required autocomplete="off" placeholder="Enter password" name="password">
+  <form [formGroup]="userData" (submit)="onSubmit()" class="articleCreate">
+    <input type="text"required autocomplete="off" placeholder="Enter your name" name="name" formControlName="name">
+    <input type="email"required autocomplete="off" placeholder="Email Address" name="email" formControlName="email">
+    <input type="password" required autocomplete="off" placeholder="Enter password" name="password" formControlName="password">
     <button type="submit" class="button button-block" name="button">Create new account</button>
   </form>
 </div>

@@ -10,7 +10,10 @@ const customerSchema =  new Schema({
     unique: true,
     required: true
   },
-  password: String,
+  password:  {
+      type: String,
+      required: true
+  },
   isAdmin:  {
     type: Boolean,
     default: false
