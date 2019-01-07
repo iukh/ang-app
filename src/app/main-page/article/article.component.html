@@ -1,3 +1,4 @@
+
 <div class="articleCard" *ngFor="let article of articles" >
   <div class="">
     <div class="title">{{article.title}}</div>
@@ -5,8 +6,8 @@
     <div class="small">Data creation: {{article.dateCreated|date:"dd/MM/yyyy"}}</div>
   </div>
   <div class="buttons">
-    <button type="button" name="button" class="viewArticle">View</button>
+    <button type="button" name="button" class="datails">View</button>
     <button type="button" name="button" class="edit">Edit</button>
-    <button type="button" (click)="delete(article)">Delete</button>
+    <button type="button" class="remove" (click)="delete(article)">Delete</button>
   </div>
 </div>
