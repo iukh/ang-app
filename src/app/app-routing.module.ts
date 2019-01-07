@@ -19,7 +19,6 @@ const routes: Routes = [
   // { path: 'article', component: ArticleFormComponent },
   { path: 'auth', component: AuthPageComponent },
   { path: 'main', component: MainPageComponent, children: [
-      {path: 'sections', component: SectionsComponent},
       {path: 'articles', component: ArticleComponent,outlet: 'second'},
       {path: 'article', component: ArticleFormComponent,outlet: 'second'},
   ] },
