@@ -3,6 +3,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 
 import { Article } from './article';
+import { Comment } from './comment';
 
 const api = '/api/articleManagement';
 const httpOptions = {
@@ -24,8 +25,16 @@ export class ArticleService {
   }
 
   addArticle (article: Article): Observable<Article> {
-    console.log(article);
   const url = `http://localhost:3000/api/articleManagement/addarticle`;
   return this.http.post<Article>(url, article, httpOptions);
   }
+
+  addComment(comment: Comment): Observable<Comment> {
+  const url = `http://localhost:3000/api/articleManagement/comment`;
+  return this.http.post<Comment>(url, comment, httpOptions);
+  }
+  getComments(id: string) {
+    return this.http.get<Array<Comment>>(`http://localhost:3000/api/articleManagement/article/${id}/comments`);
+  }
+
 }

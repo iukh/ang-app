@@ -18,6 +18,7 @@ export class ArticleFormComponent implements OnInit {
   sections: any = [];
   isSectionExisting: boolean= true;
   newSectionName: string = "";
+  newSectionId: string;
   constructor(private fb: FormBuilder,
     private sectionService: SectionService,
     private articleService: ArticleService,
@@ -30,17 +31,19 @@ export class ArticleFormComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log("new Name" + this.newSectionName)
     if (this.newSectionName) {
       this.createSection();
       var obj = this.articleForm.value;
       obj.sectionName= this.newSectionName;
+      obj.sectionId = this.printValue();
+      console.log(this.newSectionId);
       console.log("Forma DATA");
       console.log(obj);
       this.addArticle(obj);
     } else {
       this.addArticle(this.articleForm.value);
     }
+    console.log(this.newSectionId);
   }
 
   initForm() {
@@ -75,15 +78,24 @@ export class ArticleFormComponent implements OnInit {
   createSection() {
     return this.sectionService.createSection({
       isActive: false,
-      sectionName: this.newSectionName
-    }).subscribe(section => {
-      console.log(section);
-      console.log("success");
+      sectionName: this.newSectionName,
+      _id: ""
+    } ).subscribe(section  => {
+      this.setValue(section._id);
     });
+  }
+  setValue(value) {
+    this.newSectionId = value;
+    console.log("new value");
+    console.log(this.newSectionId);
+    this.printValue();
+  }
+  printValue() {
+    return this.newSectionId;
   }
   onChange(selectedSection) {
     console.log("select section " + selectedSection);
-    if (selectedSection == "") {
+    if (selectedSection == "Add new Section") {
       this.isSectionExisting = false;
     } else {
       this.isSectionExisting = true;

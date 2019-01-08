@@ -1,27 +1,27 @@
-<form [formGroup]="articleForm" (submit)="onSubmit()" class="articleCreate">
-  <label for="selectSection"> Select existing category or create new one:</label>
-  <select class="" id="selectSection" formControlName="sectionName" [(ngModel)]="selectedWorkout" (change)="onChange($event.target.value)">
-      <option value="0" selected>Add new Section</option>
-      <option *ngFor="let item of sections" [ngValue]="item" id="{{item._id}}" value={{item.sectionName}}>{{item.sectionName}}<option>
-  </select>
+<div class="container">
+  <form [formGroup]="articleForm" (submit)="onSubmit()" class="articleCreate">
+    <label for="selectSection"> Select existing category or create new one:</label>
+    <select class="" id="selectSection" formControlName="sectionName" [(ngModel)]="selectedWorkout" (change)="onChange($event.target.value)">
+        <option value="Add new Section" selected>Add new Section</option>
+        <option *ngFor="let item of sections" [ngValue]="item" id="{{item._id}}" value={{item.sectionName}}>{{item.sectionName}}<option>
+    </select>
 
-  <div id="newSection" *ngIf = "!isSectionExisting">
-      <div class="warning">Note: A new section will be added only after checking by the admin.</div>
-      <label class="">Enter section name: <input type="text" class="input_block title" [(ngModel)]="newSectionName" [ngModelOptions]="{standalone: true}"></label>
-  </div>
-  <label for="title">Enter title: </label>
-  <input type="text" id="title" formControlName="title">
+    <div id="newSection" *ngIf = "!isSectionExisting">
+        <div class="warning">Note: A new section will be added only after checking by the admin.</div>
+        <label class="black" >Enter section name: <input type="text" class="input_block title" [(ngModel)]="newSectionName" [ngModelOptions]="{standalone: true}"></label>
+    </div>
+    <label for="title">Enter title: </label>
+    <input type="text" id="title" formControlName="title">
 
-  <label for="text">Enter sitiation:</label>
-  <textarea type="text" id="text" formControlName="text"></textarea>
+    <label for="text">Enter sitiation:</label>
+    <textarea type="text" id="text" formControlName="text"></textarea>
 
-  <label for="answer">Enter solution:</label>
-  <textarea type="text" id="answer" formControlName="answer"></textarea>
-	<button type="submit" class="button">Create Pazzle</button>
-</form>
-
-<hr/><br/>
-
-<div>
-	{{articleForm.value | json}}
+    <label for="answer">Enter solution:</label>
+    <textarea type="text" id="answer" formControlName="answer"></textarea>
+  	<button type="submit" class="button">Create Pazzle</button>
+  </form>
 </div>
+
+<!-- <div>
+	{{articleForm.value | json}}
+</div> -->

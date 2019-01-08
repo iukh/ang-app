@@ -16,12 +16,12 @@
     </div>
     <div class="container__howto" id="sections">
       <div class="">
-        <button type="button" >View  all Pazzles</button> <br>
-        <button type="button" [routerLink]= " [ '/main' ,{outlets: {second: 'article'}}]" class="addButton firstPart">+</button>
         <button type="button" [routerLink]= " [ '/main' ,{outlets: {second: 'article'}}]" class="addButton secondPart">Add new Pazzle</button>
+        <hr>
 
       </div>
       <app-sections *ngIf="isSectionSelected"></app-sections>
+      <hr>
       <!-- <app-article *ngIf="!isSectionSelected"></app-article> -->
   <router-outlet name='second'></router-outlet>
   <router-outlet name='second'></router-outlet>
@@ -31,12 +31,12 @@
 
   <div class="subscriber">
     <div class="subscriber__text">
-      <span>Если вы хотите первыми узнавать о скидках, новых сортах и новостях, подпишитесь</span>
+      <span>If you want to be the first to know about new articles.</span>
     </div>
     <form class="subscriber__form" action="index.html" method="post">
       <input type="email" class="subscriber__form_email" name="" value="" placeholder="E-mail">
-      <input type="submit" class="subscriber__form_button"name="" value="подписаться">
-      <p> <input type="checkbox" checked> Я согласен с <a>правилами пользования сервисом</a></p>
+      <input type="submit" class="subscriber__form_button"name="" value="Subscribe">
+      <p> <input type="checkbox" checked> I agree with the terms of use of the service</p>
     </form>
   </div>
   <footer class="footer">
@@ -53,16 +53,15 @@
       <p><a href="#">Сертификаты</a></p>
     </div>
     <div class="footer__third-column">
-      <p>Каталог</p>
-      <p><a href="#">Чай</a></p>
-      <p><a href="#">Кофе</a></p>
+      <p>Компания</p>
+      <p><a href="#">О компании</a></p>
+      <p><a href="#">Сертификаты</a></p>
     </div>
     <div class="footer__last-column">
       <span>Звоните нам бесплатно:</span>
       <div class="footer__phoneNumber">
         8-800-333-49-80
       </div>
-      <p> © 2008-2018 Tasty Coffee</p>
     </div>
     <div class="">
     </div>

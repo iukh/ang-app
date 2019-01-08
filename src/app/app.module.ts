@@ -23,6 +23,8 @@ import { ArticleFormComponent } from './main-page/article-form/article-form.comp
 import { UserDetailsComponent } from './admin-page/user-details/user-details.component';
 import { ArticleDetailsComponent } from './admin-page/article-details/article-details.component';
 import { SectionDetailsComponent } from './admin-page/section-details/section-details.component';
+import { ArticleViewComponent } from './main-page/article-view/article-view.component';
+import { CommentsComponent } from './main-page/article-view/comments/comments.component';
 
 
 @NgModule({
@@ -39,6 +41,8 @@ import { SectionDetailsComponent } from './admin-page/section-details/section-de
     UserDetailsComponent,
     ArticleDetailsComponent,
     SectionDetailsComponent,
+    ArticleViewComponent,
+    CommentsComponent,
   ],
   imports: [
     BrowserModule,

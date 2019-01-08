@@ -16,6 +16,10 @@ export class ArticleComponent implements OnInit {
   ) {}
 
   articles: any = [];
+  comments: any = [];
+  articleDetails: Article;
+  isArticleSelected: boolean = false;
+  commentText: string;
   ngOnInit(): void {
      this.getArticles();
   }
@@ -31,4 +35,30 @@ export class ArticleComponent implements OnInit {
     this.articles = this.articles.filter(a => a !== article);
     this.articleService.deleteArticle(article).subscribe();
   }
+  getArticleDetails(article: Article) {
+    this.articleDetails = article;
+    this.isArticleSelected = true;
+    this.showComments();
+  }
+
+  addComment() {
+    return this.articleService.addComment({
+      "author": "admin",
+      "articleId": this.articleDetails._id,
+      "text": this.commentText
+    }).subscribe(
+        suc => {
+            this.showComments();
+        }
+    );
+  }
+
+  showComments(){
+    const articleId = this.articleDetails._id;
+    console.log(articleId);
+    return this.articleService.getComments(articleId).subscribe(comments => {
+    this.comments = comments;
+  });
+}
+
 }
