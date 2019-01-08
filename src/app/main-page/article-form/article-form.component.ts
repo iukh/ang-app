@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { Section } from '../../section'
 import { SectionService } from '../../section.service';
@@ -16,10 +17,11 @@ export class ArticleFormComponent implements OnInit {
   sectionId: string;
   sections: any = [];
   isSectionExisting: boolean= true;
-  newSectionName: string;
+  newSectionName: string = "";
   constructor(private fb: FormBuilder,
     private sectionService: SectionService,
-    private articleService: ArticleService
+    private articleService: ArticleService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -59,10 +61,16 @@ export class ArticleFormComponent implements OnInit {
   addArticle (article) {
     console.log("started remove")
     console.log(article)
-    return this.articleService.addArticle(article).subscribe(article => {
-      console.log("success");
-    });
-    // this.router.navigate(['/main']););
+    return this.articleService.addArticle(article).subscribe(
+      suc => {
+          console.log(suc);
+          this.router.navigate(['/main']);
+      },
+      err => {
+        console.log("ERROR!!!");
+          console.log(err);
+      }
+  );
   }
   createSection() {
     return this.sectionService.createSection({
