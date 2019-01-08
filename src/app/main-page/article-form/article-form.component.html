@@ -1,6 +1,7 @@
 <form [formGroup]="articleForm" (submit)="onSubmit()" class="articleCreate">
   <label for="selectSection"> Select existing category or create new one:</label>
   <select class="" id="selectSection" formControlName="sectionName" [(ngModel)]="selectedWorkout" (change)="onChange($event.target.value)">
+      <option value="0" selected>Add new Section</option>
       <option *ngFor="let item of sections" [ngValue]="item" id="{{item._id}}" value={{item.sectionName}}>{{item.sectionName}}<option>
   </select>
 
