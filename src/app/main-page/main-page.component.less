@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 * {
   box-sizing: border-box;
- }
+}
 // body {
 //   font-family: 'Titillium Web', sans-serif;
 //   background-image: url('/assets/images/main2.jpg');
@@ -18,24 +18,24 @@
   margin: 0;
 }
 body {
-   background-color: white;
-   color: black;
-   font: normal 16px sans-serif;
+  background-color: white;
+  color: black;
+  font: normal 16px sans-serif;
 }
 
 a {
-   color: inherit;
-   text-decoration: none;
-   text-align: center;
+  color: inherit;
+  text-decoration: none;
+  text-align: center;
 }
 
 button,
 input[type=submit] {
- background-color: @main-color;
- cursor: pointer;
- text-transform: uppercase;
- color: white;
- padding: 10px;
+  background-color: @main-color;
+  cursor: pointer;
+  text-transform: uppercase;
+  color: white;
+  padding: 10px;
 }
 
 .addButton {
@@ -45,76 +45,76 @@ input[type=submit] {
   margin: 10px;
 }
 h1 {
- color: @main-color;
+  color: @main-color;
 }
 
 .soft-background-color {
- background-color: #fff8f5;
+  background-color: #fff8f5;
 }
 
 .white-text {
- color: #fff;
+  color: #fff;
 }
 
 /*Welcome-screen Layout*/
 
 .welcome-screen__wrapper {
- background-image: url(/assets/images/main2.jpg);
- background-size: cover;
- color: white;
- font-family: Comic Sans;
+  background-image: url(/assets/images/main2.jpg);
+  background-size: cover;
+  color: white;
+  font-family: Comic Sans;
 }
 
 /*Welcome-screen Layout --> Header*/
 
 .welcome-screen__header {
- background-color: rgba(0,0,0,0.65);
- display: grid;
- grid-template-columns: auto minmax(100px,600px) minmax(500px,600px) auto;
- grid-template-areas:
-   ". header header .";
- padding: 20px 50px 10px 50px;
- text-align: justify;
- text-transform: uppercase;
+  background-color: rgba(0,0,0,0.65);
+  display: grid;
+  grid-template-columns: auto minmax(100px,600px) minmax(500px,600px) auto;
+  grid-template-areas:
+  ". header header .";
+  padding: 20px 50px 10px 50px;
+  text-align: justify;
+  text-transform: uppercase;
 }
 
 .header__logo {
- grid-area: header;
- justify-self: start;
+  grid-area: header;
+  justify-self: start;
 }
 
 .header__nav {
- grid-area: header;
- justify-self: end;
+  grid-area: header;
+  justify-self: end;
 }
 
 .nav__item {
-   display: inline-block;
-   margin-right: 15px;
-   border: 2px solid @main-color;
-   padding: 7px 10px;
-   border-radius: 5px;
-   color: #540202;
-   background-color: white;
+  display: inline-block;
+  margin-right: 15px;
+  border: 2px solid @main-color;
+  padding: 7px 10px;
+  border-radius: 5px;
+  color: #540202;
+  background-color: white;
 }
 .nav__item:hover {
-   color: white;
-   background-color: @main-color;
+  color: white;
+  background-color: @main-color;
 }
 
 .nav__login-button {
-   border: none;
-   border-radius: 5px;
-   color: inherit;
-   padding: 10px 25px;
+  border: none;
+  border-radius: 5px;
+  color: inherit;
+  padding: 10px 25px;
 }
 
 .header__logo span {
- background-color: @main-color;
- font-size: 26px;
- border-radius: 80px;
- margin-bottom: 20px;
- padding: 3px 4px;
+  background-color: @main-color;
+  font-size: 26px;
+  border-radius: 80px;
+  margin-bottom: 20px;
+  padding: 3px 4px;
 }
 
 /*Categories*/
@@ -179,7 +179,7 @@ h1 {
   display: grid;
   grid-template-columns: auto minmax(100px,600px) minmax(100px,600px) auto;
   grid-template-areas:
-    ". text form .";
+  ". text form .";
   text-align: center;
   padding: 30px 0;
 }
@@ -249,17 +249,17 @@ h1 {
 }
 
 .container{
-    margin: 0 auto;
-    padding: 0 0;
-    display: grid;
-    grid-template-columns: 50% 50%;
-    grid-gap: 0px;
-    grid-template-areas:
-      "content content"
-      "content content"
-      "content content"
-      "content content"
-      "content content";
+  margin: 0 auto;
+  padding: 0 0;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-gap: 0px;
+  grid-template-areas:
+  "content content"
+  "content content"
+  "content content"
+  "content content"
+  "content content";
 }
 
 /*Container Layout --> Howto section*/
