@@ -15,6 +15,5 @@ export class AuthPageComponent implements OnInit {
 
   setLoginButtonClicked(clicked: boolean) {
       this.LoginWasClicked = clicked;
-      console.log(this.LoginWasClicked);
   }
 }
