@@ -58,7 +58,12 @@ export class ArticleComponent implements OnInit {
     console.log(articleId);
     return this.articleService.getComments(articleId).subscribe(comments => {
     this.comments = comments;
-  });
-}
+    });
+  }
+
+  clicked(event) {
+    event.target.classList.add('open');
+    console.log("clicked")
+  }
 
 }
