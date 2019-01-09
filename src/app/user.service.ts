@@ -15,14 +15,10 @@ export class UserService {
   ) {}
 
   addUser (user: User): Observable<User> {
-    console.log("server delete");
-    console.log(user);
     const url = `http://localhost:3000/api/customerManagement/customer`;
     return this.http.post<User>(`http://localhost:3000/api/customerManagement/customer`, user);
   }
   loginUser(userData) {
-    console.log("server informations");
-    console.log(userData);
     return this.http.post<User>(`http://localhost:3000/login`, userData);
   }
   getUsers() {
