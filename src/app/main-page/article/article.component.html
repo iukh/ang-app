@@ -1,4 +1,3 @@
-
 <div class="articleCard" *ngFor="let article of articles" >
   <div class="">
     <div class="title">{{article.title}}</div>
@@ -20,8 +19,8 @@
       <hr>
     </div>
     <label>Situation: <textarea readonly>{{articleDetails.text}}</textarea></label>
-    <div class="menu" id="answer">
-      <span class="title">Solution (Click to see) </span>
+    <div class="menu" id="answer" (click)="clicked($event)">
+      <span class="title" (click)="clicked($event)">Solution (Click to see) </span>
         <textarea readonly>{{articleDetails.answer}}</textarea>
     </div>
   </div>
